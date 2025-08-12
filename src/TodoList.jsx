@@ -27,9 +27,9 @@ const TodoList = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 mx-auto p-4 bg-[#1e1e24] min-h-screen">
+    <div className="grid grid-cols-1 mx-auto p-4 bg-linear-to-b from-[#fd746c] from-10%  to-100% to-[#ff9068] min-h-screen">
       <div className="grid grid-cols-3 h-fit gap-10 w-full">
-        <h1 className="text-4xl text-[#92140c] font-bold h-fit col-span-3">
+        <h1 className="text-4xl text-[#ffffff] font-bold h-fit col-span-3">
           Todo List
         </h1>
         <div className="col-span-3 w-full gap-5 flex">
@@ -43,11 +43,11 @@ const TodoList = () => {
                 addTask();
               }
             }}
-            className="col-span-2 border-b-1 px-2 py-1 text-[#fff8f0] border-[#92140c] font-extralight focus:outline-none"
+            className="col-span-2 border-b-2 px-2 py-1 text-[#000000] border-[#ffffff] font-bold focus:outline-none"
           />
           <button
             onClick={() => addTask()}
-            className="w-full md:w-fit rounded-md px-2 md:px-4 md:py-0 py-1 text-md  text-[#fff8f0] hover:text-[#fff8f0b1] active:text-[#fff8f0b1] cursor-pointer transition-all duration-300 ease-in-out font-bold col-span-1"
+            className="w-full md:w-fit rounded-md px-2 md:px-4 md:py-0 py-1 text-md  text-[#ffffff] hover:text-[#ffffffb1] active:text-[#000000] cursor-pointer transition-all duration-100 ease-in-out font-bold col-span-1"
           >
             Add task
           </button>
@@ -55,7 +55,7 @@ const TodoList = () => {
         <div className="w-full flex justify-end h-fit col-span-3">
           <button
             onClick={() => clearAll()}
-            className="text-[#9c3232] rounded-md px-2 py-1 text-xl font-extralight hover:text-[#9c3232b1] active:text-[#ffffff] cursor-pointer transition-all ease-in-out duration-100"
+            className="text-[#ffffff] rounded-md px-2 py-1 text-xl font-extralight hover:text-[#ffffffb1] active:text-[#000000] cursor-pointer transition-all ease-in-out duration-100"
           >
             Clear all tasks
           </button>
@@ -65,18 +65,19 @@ const TodoList = () => {
             {taskList.map((task, index) => (
               <li
                 key={index}
-                className="bg-[#92140c] rounded-lg p-4 hover:shadow-[0px_5px_10px] shadow-[#fff8f0] hover:scale-105 transition-all duration-100 cursor-pointer"
+                className="bg-[#ffffff] rounded-lg p-4 hover:scale-105 transition-all duration-100 cursor-pointer"
               >
                 <div className="w-full flex justify-end">
                   <button
                     onClick={() => deleteTask(index)}
-                    className="w-fit text-2xl font-bold text-[#000000] hover:text-[#fff8f0] cursor-pointer active:text-[#fff8f0b1] transition-all duration-100"
+                    className="w-fit text-2xl font-bold text-[#000000] hover:text-[#c2c2c2] cursor-pointer active:text-[#000000] transition-all duration-200 
+                    hover:rotate-180"
                   >
                     X
                   </button>
                 </div>
 
-                <p className="text-2xl font-extralight text-[#fff8f0]">
+                <p className="text-2xl font-extralight text-[#000000] break-words">
                   {task}
                 </p>
               </li>
